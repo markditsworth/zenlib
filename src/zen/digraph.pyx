@@ -373,33 +373,33 @@ cdef class DiGraph:
 
 		# self.next_node_idx < self.node_capacity
 		if verbose:
-			print 'checking if self.next_node_idx < self.node_capacity'
+			print('checking if self.next_node_idx < self.node_capacity')
 
 		assert self.next_node_idx <= self.node_capacity, 'self.next_node_idx > self.node_capacity (%d,%d)' % (self.next_node_idx,self.node_capacity)
 
 		# self.max_node_idx < self.next_node_idx
 		if verbose:
-			print 'checking if self.max_node_idx < self.next_node_idx'
+			print('checking if self.max_node_idx < self.next_node_idx')
 
 		assert self.max_node_idx < self.next_node_idx, 'self.max_node_idx >= self.next_node_idx (%d,%d)' % (self.max_node_idx,self.next_node_idx)
 
 		# there should be no other valid nodes beyond self.max_node_idx
 		if verbose:
-			print 'checking if no valid nodes exist beyond self.max_node_idx'
+			print('checking if no valid nodes exist beyond self.max_node_idx')
 
 		for i in range(self.max_node_idx+1,self.node_capacity):
 			assert not self.node_info[i].exists, 'self.node_info[%d] exists, but is beyond self.max_node_idx (= %d)' % (i,self.max_node_idx)
 
 		# the node entry preceeding self.max_node_idx should exist
 		if verbose:
-			print 'checking that self.max_node_idx node exists'
+			print('checking that self.max_node_idx node exists')
 
 		assert self.max_node_idx >= -1, 'self.max_node_idx is invalid (= %d)' % self.max_node_idx
 		assert self.max_node_idx == -1 or self.node_info[self.max_node_idx].exists, 'The node entry at self.max_node_idx does not exist'
 
 		# count the number of existing nodes
 		if verbose:
-			print 'counting the number of existing nodes'
+			print('counting the number of existing nodes')
 
 		cdef int num_existing_nodes = 0
 
@@ -411,7 +411,7 @@ cdef class DiGraph:
 
 		# validate the structure of the free node list
 		if verbose:
-			print 'counting the number of free nodes'
+			print('counting the number of free nodes')
 
 		cdef int num_free_nodes = 0
 		i = self.first_free_node
@@ -435,33 +435,33 @@ cdef class DiGraph:
 
 		# self.next_edge_idx < self.edge_capacity
 		if verbose:
-			print 'checking if self.next_edge_idx < self.edge_capacity'
+			print('checking if self.next_edge_idx < self.edge_capacity')
 
 		assert self.next_edge_idx <= self.edge_capacity, 'self.next_edge_idx > self.edge_capacity (%d,%d)' % (self.next_edge_idx,self.edge_capacity)
 
 		# self.max_edge_idx < self.next_edge_idx
 		if verbose:
-			print 'checking if self.max_edge_idx < self.next_edge_idx'
+			print('checking if self.max_edge_idx < self.next_edge_idx')
 
 		assert self.max_edge_idx < self.next_edge_idx, 'self.max_edge_idx >= self.next_edge_idx (%d,%d)' % (self.max_edge_idx,self.next_edge_idx)
 
 		# there should be no other valid edges beyond self.max_edge_idx
 		if verbose:
-			print 'checking if no valid edges exist beyond self.max_edge_idx'
+			print('checking if no valid edges exist beyond self.max_edge_idx')
 
 		for i in range(self.max_edge_idx+1,self.edge_capacity):
 			assert not self.edge_info[i].exists, 'self.edge_info[%d] exists, but is beyond self.max_edge_idx (= %d)' % (i,self.max_edge_idx)
 
 		# the edge entry preceeding self.max_edge_idx should exist
 		if verbose:
-			print 'checking that self.max_edge_idx edge exists'
+			print('checking that self.max_edge_idx edge exists')
 
 		assert self.max_edge_idx >= -1, 'self.max_edge_idx is invalid (= %d)' % self.max_edge_idx
 		assert self.max_edge_idx == -1 or self.edge_info[self.max_edge_idx].exists, 'The edge entry at self.max_edge_idx does not exist'
 
 		# count the number of existing edges
 		if verbose:
-			print 'counting the number of existing edges'
+			print('counting the number of existing edges')
 
 		cdef int num_existing_edges = 0
 
@@ -473,7 +473,7 @@ cdef class DiGraph:
 
 		# validate the structure of the free edge list
 		if verbose:
-			print 'counting the number of free edges'
+			print('counting the number of free edges')
 
 		cdef int num_free_edges = 0
 		i = self.first_free_edge
