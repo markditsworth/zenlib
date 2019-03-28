@@ -46,8 +46,8 @@ def min_cut(G,s,t,capacity=UNIT_CAPACITY,**kwargs):
 	if check_graph and capacity==WEIGHT_CAPACITY:
 		for eidx, w in G.edges_(weight=True):
 			if w < 0:
-				raise ZenException, 'min_cut_ only supports non-negative edge weights;'\
-					' edge with id %s has weight %s;' % (eidx, w)
+				raise ZenException('min_cut_ only supports non-negative edge weights;'\
+					' edge with id %s has weight %s;' % (eidx, w))
 	
 	return min_cut_(G, G.node_idx(s), G.node_idx(t), capacity)
 
@@ -68,18 +68,18 @@ def min_cut_(G,sidx,tidx,capacity=UNIT_CAPACITY):
 	The weight of the min-cut (also indicating the max-flow).
 	"""
 	if type(G) is not z.DiGraph:
-		raise ZenException, 'min_cut_ only supports DiGraph; found %s.' % type(G)
+		raise ZenException('min_cut_ only supports DiGraph; found %s.' % type(G))
 	
 	if G.node_object(sidx) == None:
-		raise ZenException, 'the source node is not in the graph;'
+		raise ZenException('the source node is not in the graph;')
 	else:
 		s = G.node_object(sidx)
 	if G.node_object(tidx) == None:
-		raise ZenException, 'the sink node is not in the graph;'
+		raise ZenException('the sink node is not in the graph;')
 	else:
 		t = G.node_object(tidx)
 	if capacity != UNIT_CAPACITY and capacity != WEIGHT_CAPACITY:
-		raise ZenException, 'capacity must either be \'unit\' or \'weight\''
+		raise ZenException('capacity must either be \'unit\' or \'weight\'')
 	
 	#copies the inputted graph, the copy will be used as the residual capacities graph
 	residual_capacities = G.copy()
@@ -131,8 +131,8 @@ def min_cut_set(G,s,t,capacity=UNIT_CAPACITY,check_graph=True):
 	if check_graph:
 		for eidx, w in G.edges_(weight=True):
 			if w < 0:
-				raise ZenException, 'min_cut_set only supports non-negative edge weights;'\
-					' edge with id %s has weight %s;' % (eidx, w)
+				raise ZenException('min_cut_set only supports non-negative edge weights;'\
+					' edge with id %s has weight %s;' % (eidx, w))
 	
 	edge_set_idxs = min_cut_set_(G, G.node_idx(s), G.node_idx(t), capacity)
 
@@ -167,19 +167,19 @@ def min_cut_set_(G,sidx,tidx,capacity=UNIT_CAPACITY):
 	The list of edges in a min-cut.  Each edge is the index of an edge in the graph.
 	"""
 	if type(G) is not z.DiGraph:
-		raise ZenException, 'min_cut_set_ only supports DiGraph;'\
-				' found %s.' % type(G)
+		raise ZenException('min_cut_set_ only supports DiGraph;'\
+				' found %s.' % type(G))
 	
 	if G.node_object(sidx) == None:
-		raise ZenException, 'the source node is not in the graph;'
+		raise ZenException('the source node is not in the graph;')
 	else:
 		s = G.node_object(sidx)
 	if G.node_object(tidx) == None:
-		raise ZenException, 'the sink node is not in the graph;'
+		raise ZenException('the sink node is not in the graph;')
 	else:
 		t = G.node_object(tidx)
 	if capacity != UNIT_CAPACITY and capacity != WEIGHT_CAPACITY:
-		raise ZenException, 'capacity must either be \'unit\' or \'weight\''
+		raise ZenException('capacity must either be \'unit\' or \'weight\'')
 
 	residual_capacities = G.copy()
 	residual_capacities = create_residual_digraph(residual_capacities, capacity)
@@ -217,7 +217,7 @@ def ford_fulkerson(G, s, t, capacity):
 	while path != None:
 		flow = min(G.weight(u,v) for u,v in path)
 		if flow == float('infinity'):
-			raise ZenException, 'path from s to t with infinite capacity;'
+			raise ZenException('path from s to t with infinite capacity;')
 		else:
 			for u,v in path:
 				if G.has_edge(u, v):

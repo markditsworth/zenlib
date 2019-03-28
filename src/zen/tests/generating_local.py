@@ -8,14 +8,14 @@ class LocalAttachmentTestCase(unittest.TestCase):
 		try:
 			zen.generating.local_attachment(10,5,2,blah=10)
 			self.fail('blah should not be accepted as a keyword argument')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 			
 	def test_bad_r(self):
 		try:
 			zen.generating.local_attachment(10,5,0)
 			self.fail('r cannot be 0')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 			
 	def test_seed(self):
@@ -44,14 +44,14 @@ class LocalAttachmentTestCase(unittest.TestCase):
 		try:
 			zen.generating.local_attachment(10,5,2,graph=graph)
 			self.fail('a non-empty graph should not be accepted')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 
 	def test_min_r(self):
 		try:
 			zen.generating.local_attachment(10,3,0)
 			self.fail('r=0 should not be accepted')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 		
 	def test_same_num_edges(self):

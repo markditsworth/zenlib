@@ -112,10 +112,10 @@ def read_str(sbuffer, **kwargs):
 	check_for_duplicates = kwargs.pop('ignore_duplicate_edges',False)
 	
 	if len(kwargs) > 0:
-		raise ZenException, 'Unknown keyword arguments: %s' % ', '.join(kwargs.keys())
+		raise ZenException('Unknown keyword arguments: %s' % ', '.join(kwargs.keys()))
 	
 	if check_for_duplicates and directed:
-		raise ZenException, 'ignore_duplicate_edges can only be set when directed = False'
+		raise ZenException('ignore_duplicate_edges can only be set when directed = False')
 		
 	# build the graph
 	G = None
@@ -124,7 +124,7 @@ def read_str(sbuffer, **kwargs):
 	elif directed == False:
 		G = Graph()
 	else:
-		raise ZenException, 'directed must be either True or False.'
+		raise ZenException('directed must be either True or False.')
 	
 	#####
 	# convert the string into a bitvector
@@ -144,7 +144,7 @@ def read_str(sbuffer, **kwargs):
 	offset += VERSION_LEN
 	
 	if version != 1:
-		raise Exception, 'Invalid file format or version number'
+		raise Exception('Invalid file format or version number')
 	
 	# read the num of indexes
 	last_idx = bv2dec(bv,offset,NUM_INDEX_LEN)
@@ -356,7 +356,7 @@ def write_str(G):
 	"""
 	
 	if not G.is_compact():
-		raise ZenException, 'Graph G must be compact'
+		raise ZenException('Graph G must be compact')
 		
 	bv = None
 	# if strict_order:
@@ -424,7 +424,7 @@ def dec2bv(i,bv,offset,max_len):
 	num_bits = math.ceil(math.log(i+1,2))
 	
 	if num_bits > max_len:
-		raise Exception, 'Too many bits being stored.'
+		raise Exception('Too many bits being stored.')
 	
 	pos = max_len + offset - 1
 	while i > 0:
@@ -441,7 +441,7 @@ def dec2bin(i,max_len):
 	num_bits = math.ceil(math.log(i+1,2))
 	
 	if num_bits > max_len:
-		raise Exception, 'Too many bits being stored.'
+		raise Exception('Too many bits being stored.')
 	
 	A = array.array('c',['0'] * max_len)
 	pos = max_len - 1
@@ -475,7 +475,7 @@ def main():
 	#bv = store_bitvector(G, len(idx_lookup)-1, lambda x: idx_lookup[x])
 	s = store_str(G, strict_order = True)
 	G2 = read_str(s)
-	print len(G2.V), len(G2.E), G2.topology()
+	print(len(G2.V), len(G2.E), G2.topology())
 
 if __name__ == '__main__':
 	main()

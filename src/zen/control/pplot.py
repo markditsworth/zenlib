@@ -365,11 +365,11 @@ def _plot_profiles(items, **kwargs): # heatmap=False, color='b', marker='o', mar
 			elif len(p) == 3:
 				pts.append( p )
 			else:
-				raise TypeError, 'plot_profiles supports lists of tupes/lists of length 2 or 3 only; found length %i.' % len(p)
+				raise TypeError('plot_profiles supports lists of tupes/lists of length 2 or 3 only; found length %i.' % len(p))
 		elif type(item) is DiGraph:
 			pts.append(control_profile(item,normalized=True))
 		else:
-			raise TypeError, 'items of type %s cannot be converted into control profiles' % str(type(item))
+			raise TypeError('items of type %s cannot be converted into control profiles' % str(type(item)))
 	
 	if heatmap:
 		if cmap is None:
@@ -428,7 +428,7 @@ def profile_heatmap_weighted(items, weights=None, **kwargs):
 	if weights is None: # if no weights are given make them weighted equally
 		weights = [1.0/float(len(items)) for i in range(len(items))]
 	if len(weights) != len(items):
-		raise Exception, 'weights parameter must be the same length as items.'
+		raise Exception('weights parameter must be the same length as items.')
 	
 	for i,item in enumerate(items):
 		d = _plot_profiles(item, heatmap=True, color=color, num_steps=num_steps, cmap=cmap, plot_heatmap=False)

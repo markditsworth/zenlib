@@ -4,6 +4,14 @@ import os, os.path
 from zen.algorithms.community import lpa
 import zen
 
+def compare(x,y):
+    if x<y:
+        return -1
+    elif x==y:
+        return 0
+    else:
+        return 1
+
 class RealNetworksLPATestCase(unittest.TestCase):
 
 	def test_mondego(self):
@@ -19,11 +27,12 @@ class RealNetworksLPATestCase(unittest.TestCase):
 		# verify that all nodes are in the communities
 		nodes = set(G.nodes())
 
-		print 'NET:',sorted(G.nodes(),cmp=lambda x,y: cmp(int(x),int(y)))
+		#print('NET:',sorted(G.nodes(),cmp=lambda x,y: cmp(int(x),int(y))))
+		print('NET:',sorted(G.nodes(),cmp=lambda x,y: compare(int(x),int(y))))
 		
 		for c in comms:
-			print sorted(c.nodes(),cmp=lambda x,y: cmp(int(x),int(y)))
-			print sorted(c.nodes_())
+			print(sorted(c.nodes(),cmp=lambda x,y: compare(int(x),int(y))))
+			print(sorted(c.nodes_()))
 			for n in c:
 				if n not in nodes:
 					self.fail('node was not found in node set: %s' % str(n))

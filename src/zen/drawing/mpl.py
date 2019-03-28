@@ -50,13 +50,13 @@ def draw_to_axes(view,**kwargs):
 	ax = kwargs.pop('ax',None)
 	
 	if len(kwargs) > 0:
-		raise ZenException, 'Unexpected keyword arguments: %s' % ','.join(kwargs.keys())
+		raise ZenException('Unexpected keyword arguments: %s' % ','.join(kwargs.keys()))
 		
 	G = view.graph()
 	pos = view.pos_array()
 	
 	if pos is None:
-		raise ZenException, 'No position information is in view object'
+		raise ZenException('No position information is in view object')
 	
 	if ax == None:
 		ax = pl.gca()
@@ -87,7 +87,7 @@ def draw_to_axes(view,**kwargs):
 		if shape == CIRCLE:
 			ax.add_patch(Circle( (x,y), radius=dim[0], facecolor=color, edgecolor=bcolor, linewidth=bwidth, zorder=2))
 		else:
-			raise ZenException, 'Node shape %s not supported' % shape
+			raise ZenException('Node shape %s not supported' % shape)
 
 	# draw edges
 	for eidx in G.edges_iter_():
@@ -135,7 +135,7 @@ def draw(view,**kwargs):
 	bounds = kwargs.pop('bounds',None)
 	
 	if len(kwargs) > 0:
-		raise ZenException, 'Unexpected keyword arguments: %s' % ','.join(kwargs.keys())
+		raise ZenException('Unexpected keyword arguments: %s' % ','.join(kwargs.keys()))
 	
 	if fig == None:
 		fig = pl.gcf()

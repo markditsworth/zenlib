@@ -111,10 +111,10 @@ class Benchmark:
 		
 		self.setup()
 		
-		print '\n%s:' % self.name
+		print('\n%s:' % self.name)
 		for name,fxns in self.tests.items():
 			run_times = []
-			print '\tTest: %s' % name.ljust(self.max_name_len+2,' '),
+			print('\tTest: %s' % name.ljust(self.max_name_len+2,' '),end=' ')
 			setup_fxn,test_fxn,teardown_fxn = fxns
 			
 			for r in range(self.number):
@@ -133,7 +133,7 @@ class Benchmark:
 					teardown_fxn()
 				
 			self.times[name] = min(run_times)
-			print self.times[name]
+			print(self.times[name])
 			
 		self.teardown()
 			

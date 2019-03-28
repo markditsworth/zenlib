@@ -6,7 +6,7 @@ def type_check(obj,target_type,exception_msg=None):
 	if type(obj) != target_type:
 		if exception_msg == None:
 			exception_msg = 'Received %s, type %s.  Expected %s' % (str(obj),str(type(obj)),str(target_type))
-		raise TypeError, exception_msg
+		raise TypeError(exception_msg)
 		
 	return
 

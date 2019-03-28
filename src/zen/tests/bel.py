@@ -14,7 +14,7 @@ class BELTestCase(unittest.TestCase):
 		try:
 			x = bel.write_str(G)
 			self.fail('bel.write_str should have raised an exception. G is not compact.')
-		except ZenException,e:
+		except ZenException as e:
 			pass
 	
 	def test_write_objless(self):

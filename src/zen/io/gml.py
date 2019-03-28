@@ -194,7 +194,7 @@ def format_zen_data(keyname, data, tab_depth, encoder, strict=True):
 					num = float(encoded_data)
 					assert(num < 2147483647 or num > -2147483648)
 
-			except AssertionError, UnicodeEncodeError:
+			except (AssertionError, UnicodeEncodeError):
 				raise ZenException('GML Encoder has violated gml specifications. '\
 					'see <http://www.fim.uni-passau.de/fileadmin/files/lehrstuhl/brandenburg/projekte/gml/gml-technical-report.pdf>. \n Use '\
 					'gml.write(..., strict=False) to force writing.')
@@ -276,8 +276,8 @@ def read(fname,**kwargs):
 
 		if(isinstance(gml_tree, list)):
 			graph_tree = gml_tree[0]
-			print 'Warning: multiple graphs stored in this file.  Use '\
-				'gml.read_all(fname, [...]) to get list of all graphs'
+			print('Warning: multiple graphs stored in this file.  Use '\
+				'gml.read_all(fname, [...]) to get list of all graphs')
 	
 		return build_graph(graph_tree, weight_fxn)
 
@@ -301,8 +301,8 @@ def read_all(fname, **kwargs):
 			graph_tree = [ gml_tree['graph'] ]
 
 			graph_tree = gml_tree[0]
-			print 'Warning: multiple graphs stored in this file.  Use '\
-				'gml.read_all(fname, [...]) to get list of all graphs'
+			print('Warning: multiple graphs stored in this file.  Use '\
+				'gml.read_all(fname, [...]) to get list of all graphs')
 	
 		return build_graph(graph_tree, weight_fxn)
 

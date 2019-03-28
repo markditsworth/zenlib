@@ -72,7 +72,7 @@ class UbigraphRenderer(object):
 		self._event_delay = kwargs.pop('event_delay',0)
 		
 		if len(kwargs) > 0:
-			raise ZenException, 'Unexpected remaining arguments: %s' % kwargs.keys()
+			raise ZenException('Unexpected remaining arguments: %s' % kwargs.keys())
 		
 		logger.debug('connecting to ubigraph server: %s' % url)
 		self.server = xmlrpclib.Server(url)

@@ -11,7 +11,7 @@ class RandomizeTestCase(unittest.TestCase):
 		try:
 			choose_node(G,blah=10)
 			self.fail('blah should not be accepted as a keyword argument')
-		except ZenException,e:
+		except ZenException as e:
 			pass
 	
 	def test_choose_node(self):
@@ -43,7 +43,7 @@ class RandomizeTestCase(unittest.TestCase):
 		try:
 			choose_edge(G,blah=10)
 			self.fail('blah should not be accepted as a keyword argument')
-		except ZenException,e:
+		except ZenException as e:
 			pass
 	
 	def test_choose_edge(self):
@@ -80,7 +80,7 @@ class RandomizeTestCase(unittest.TestCase):
 		try:
 			shuffle(G,blah=10)
 			self.fail('blah should not be accepted as a keyword argument')
-		except ZenException,e:
+		except ZenException as e:
 			pass
 	
 	def test_shuffle(self):

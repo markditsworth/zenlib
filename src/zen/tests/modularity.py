@@ -3,53 +3,53 @@ from zen import *
 
 class TestSynonymModularity(unittest.TestCase):
     def test_small_graph_modularity(self):
-		graph=Graph()
-		graph.add_node('1')
-		graph.add_node('2')
-		graph.add_node('3')
-		graph.add_node('4')
-		graph.add_node('5')
-		graph.add_node('6')
-		graph.add_edge('1','2')
-		graph.add_edge('3','2')
-		graph.add_edge('1','3')
-		graph.add_edge('4','5')
-		graph.add_edge('4','6')
-		graph.add_edge('5','6')
-		graph.add_edge('2','5')
-		community_assignment={0:['1','2','3'],1:['4','5','6']}
-		expected_result=10.0/28 # hand calculated
-		#print 'modularity: ' + str(modularity.modularity(graph, community_assignment))
-		self.assertAlmostEqual(modularity(graph, community_assignment), expected_result)
-		graph.add_node('7')
-		graph.add_node('8')
-		graph.add_node('9')
-		graph.add_edge('7','8')
-		graph.add_edge('8','9')
-		graph.add_edge('9','7')
-		graph.add_edge('8','5')
-		graph.add_edge('8','2')
-		expected_result=5.0/12 # hand calculated
-		
-		community_assignment={0:['1','2','3'],1:['4','5','6'],2:['7','8','9']}
-		#print 'modularity: ' + str(modularity.modularity(graph, community_assignment))
-		self.assertAlmostEqual(modularity(graph, community_assignment), expected_result)
-		
-		#community_assignment={0:['1','3'],1:['4','6'],2:['7','9'],3:['2','5','8']}
-		#print 'modularity: ' + str(modularity.modularity(graph, community_assignment))
-		
-		
-		
-		
-		
-		
+                graph=Graph()
+                graph.add_node('1')
+                graph.add_node('2')
+                graph.add_node('3')
+                graph.add_node('4')
+                graph.add_node('5')
+                graph.add_node('6')
+                graph.add_edge('1','2')
+                graph.add_edge('3','2')
+                graph.add_edge('1','3')
+                graph.add_edge('4','5')
+                graph.add_edge('4','6')
+                graph.add_edge('5','6')
+                graph.add_edge('2','5')
+                community_assignment={0:['1','2','3'],1:['4','5','6']}
+                expected_result=10.0/28 # hand calculated
+                #print 'modularity: ' + str(modularity.modularity(graph, community_assignment))
+                self.assertAlmostEqual(modularity(graph, community_assignment), expected_result)
+                graph.add_node('7')
+                graph.add_node('8')
+                graph.add_node('9')
+                graph.add_edge('7','8')
+                graph.add_edge('8','9')
+                graph.add_edge('9','7')
+                graph.add_edge('8','5')
+                graph.add_edge('8','2')
+                expected_result=5.0/12 # hand calculated
+                
+                community_assignment={0:['1','2','3'],1:['4','5','6'],2:['7','8','9']}
+                #print 'modularity: ' + str(modularity.modularity(graph, community_assignment))
+                self.assertAlmostEqual(modularity(graph, community_assignment), expected_result)
+                
+                #community_assignment={0:['1','3'],1:['4','6'],2:['7','9'],3:['2','5','8']}
+                #print 'modularity: ' + str(modularity.modularity(graph, community_assignment))
+                
+                
+                
+                
+                
+                
         
         
-		
-		
-		
-		
-    '''	
+                
+                
+                
+                
+    ''' 
     def test_words(self):
         # Create the graph first so we can use it for the tests
         # Using adjacency lists to store synonyms of a word

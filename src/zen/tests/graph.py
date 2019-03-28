@@ -601,7 +601,7 @@ class GraphTestCase(unittest.TestCase):
         try:
             G.add_edge('1','2')
             success = True
-        except ZenException,e:
+        except ZenException as e:
             if not str(e).startswith('Duplicate edges'):
                 self.fail('Incorrect exception: %s' % str(e))
             
@@ -614,7 +614,7 @@ class GraphTestCase(unittest.TestCase):
         try:
             G.add_edge('2','1')
             success = True
-        except ZenException,e:
+        except ZenException as e:
             if not str(e).startswith('Duplicate edges'):
                 self.fail('Incorrect exception: %s' % str(e))
             
@@ -860,7 +860,7 @@ class GraphTestCase(unittest.TestCase):
         try:
             for nobj,data in G.neighbors_iter('1',data=True):
                 self.assertEqual(data,None)
-        except ZenException, e:
+        except ZenException as e:
             success = False
             self.assertTrue('does not have a node object' in str(e))
     
@@ -911,7 +911,7 @@ class GraphTestCase(unittest.TestCase):
         try:
             for x,y,data in G.edges(data=True):
                 pass
-        except ZenException, e:
+        except ZenException as e:
             if str(e).startswith('Edge'):
                 success = False
 

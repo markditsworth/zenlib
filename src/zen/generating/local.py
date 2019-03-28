@@ -32,17 +32,17 @@ def local_attachment(n, m, r, **kwargs):
 	graph = kwargs.pop('graph',None)
 	
 	if graph is not None and not graph.is_directed():
-		raise ZenException, 'The graph provided must be directed'
+		raise ZenException('The graph provided must be directed')
 	if graph is not None and len(graph) > 0:
-		raise ZenException, 'The graph provided is not empty'
+		raise ZenException('The graph provided is not empty')
 	
 	if len(kwargs) > 0:
-		raise ZenException, 'Unknown arguments: %s' % ', '.join(kwargs.keys())
+		raise ZenException('Unknown arguments: %s' % ', '.join(kwargs.keys()))
 	
 	if type(r) != int:
-		raise ZenException, 'r must be an integer'
+		raise ZenException('r must be an integer')
 	elif r < 1:
-		raise ZenException, 'r must be 1 or larger'
+		raise ZenException('r must be 1 or larger')
 		
 	if seed is None:
 		seed = -1

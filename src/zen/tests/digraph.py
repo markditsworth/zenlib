@@ -636,7 +636,7 @@ class DiGraphTestCase(unittest.TestCase):
 		try:
 			G.add_edge('1','2')
 			success = True
-		except Exception,e:
+		except Exception as e:
 			if not str(e).startswith('Duplicate edges'):
 				self.fail('Incorrect exception: %s' % str(e))
 
@@ -960,7 +960,7 @@ class DiGraphTestCase(unittest.TestCase):
 		try:
 			for nobj,data in G.neighbors_iter('1',data=True):
 				self.assertEqual(data,None)
-		except Exception, e:
+		except Exception as e:
 			success = False
 			self.assertTrue('does not have a node object' in str(e))
 
@@ -1011,7 +1011,7 @@ class DiGraphTestCase(unittest.TestCase):
 		try:
 			for x,y,data in G.edges(data=True):
 				pass
-		except Exception, e:
+		except Exception as e:
 			if str(e).startswith('Edge'):
 				success = False
 

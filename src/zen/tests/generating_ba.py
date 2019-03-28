@@ -8,7 +8,7 @@ class UndirectedBATestCase(unittest.TestCase):
 		try:
 			zen.generating.barabasi_albert(10,3,blah=10)
 			self.fail('blah should not be accepted as a keyword argument')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 	
 	def test_seed(self):

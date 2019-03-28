@@ -172,9 +172,9 @@ class View:
 		shape = shape_info[0]
 		dim = shape_info[1]
 		if shape not in SHAPE_DIMS:
-			raise ZenException, 'Unknown shape: %s' % shape
+			raise ZenException('Unknown shape: %s' % shape)
 		if len(dim) != SHAPE_DIMS[shape]:
-			raise ZenException, 'Incorrect number of dimensions for shape %s.  Expected %d, got %d.' % (shape,SHAPE_DIMS[shape],len(dim))
+			raise ZenException('Incorrect number of dimensions for shape %s.  Expected %d, got %d.' % (shape,SHAPE_DIMS[shape],len(dim)))
 			
 		return
 	
@@ -182,7 +182,7 @@ class View:
 		if shape == CIRCLE:
 			return shape_dims[0]
 		else:
-			raise ZenException, 'Unknown shape: %s' % shape
+			raise ZenException('Unknown shape: %s' % shape)
 	
 	def set_default_shape(self,shape_info):
 		"""

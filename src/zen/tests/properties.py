@@ -45,7 +45,7 @@ class PropertiesTestCase(unittest.TestCase):
 		n3 = G.add_edge('z','a')
 		G.add_edge('z','y')
 
-		print G.edges(weight=True)
+		print(G.edges(weight=True))
 
 		self.assertTrue(2.09999 < diameter(G,ignore_weights=False) <= 2.1)
 

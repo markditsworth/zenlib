@@ -66,7 +66,7 @@ def to_networkx(G):
 				
 		return Gdest
 	else:
-		raise ZenException, 'Cannot convert objects of type %s to NetworkX graph objects' % str(type(G))
+		raise ZenException('Cannot convert objects of type %s to NetworkX graph objects' % str(type(G)))
 	
 # def to_wrapped_networkx(G):
 # 	"""
@@ -101,7 +101,7 @@ def from_networkx(G):
 	elif type(G) == networkx.Graph:
 		Gdest = Graph()
 	else:
-		raise Exception, 'Unable to convert graph object type %s' % str(type(G))
+		raise Exception('Unable to convert graph object type %s' % str(type(G)))
 	
 	# add nodes	
 	for n,nd in G.nodes_iter(data=True):

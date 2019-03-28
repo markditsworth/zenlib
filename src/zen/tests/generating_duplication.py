@@ -8,7 +8,7 @@ class UndirectedDuplicationDivergenceIKYTestCase(unittest.TestCase):
 		try:
 			zen.generating.duplication_divergence_iky(10,0.5,blah=10)
 			self.fail('blah should not be accepted as a keyword argument')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 			
 	def test_seed(self):
@@ -34,7 +34,7 @@ class DirectedDuplicationDivergenceIKYTestCase(unittest.TestCase):
 		try:
 			zen.generating.duplication_divergence_iky(10,0.5,blah=10,directed=True)
 			self.fail('blah should not be accepted as a keyword argument')
-		except zen.ZenException,e:
+		except zen.ZenException as e:
 			pass
 
 	def test_directed(self):
