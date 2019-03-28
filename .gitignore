@@ -14,3 +14,6 @@ src/build
 
 # Virtual Env
 zen3/
+
+# user script
+src/uninstall.sh
