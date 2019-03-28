@@ -31,6 +31,6 @@ Random graph models
 
 """
 
-from rgm import *
-from duplication import *
-from local import *
+from zen.generating.rgm import *
+from zen.generating.duplication import *
+from zen.generating.local import *

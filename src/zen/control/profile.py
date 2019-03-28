@@ -9,7 +9,7 @@ This module implements functions surrounding the calculation of control profiles
 from zen.digraph import DiGraph
 from zen.exceptions import type_check
 
-from reachability import num_min_controls
+from zen.control.reachability import num_min_controls
 
 def profile(G,**kwargs):
 	"""

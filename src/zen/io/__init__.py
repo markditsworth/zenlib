@@ -46,10 +46,10 @@ specific, several are common enough to warrent being standardized across storage
 		
 """
 
-import edgelist
-import hedgelist
-import rdot
-import scn
-import bel
-import memlist
-import gml
+import zen.io.edgelist
+import zen.io.hedgelist
+import zen.io.rdot
+import zen.io.scn
+import zen.io.bel
+import zen.io.memlist
+import zen.io.gml

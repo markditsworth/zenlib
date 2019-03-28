@@ -13,7 +13,7 @@ from zen.digraph cimport DiGraph
 from zen.exceptions import *
 import numpy as np
 cimport numpy as np
-from Queue import Queue
+from queue import Queue
 
 __all__ = ['maximum_matching','maximum_matching_','hopcroft_karp_']
 

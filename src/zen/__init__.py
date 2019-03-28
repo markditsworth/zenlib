@@ -31,40 +31,40 @@ in Zen we use the following conventions:
 """
 
 # import graphs
-from graph import *
-from digraph import *
-from bipartite import *
-from hypergraph import *
+from zen.graph import *
+from zen.digraph import *
+from zen.bipartite import *
+from zen.hypergraph import *
 
 # basic degree properties
-from degree import *
+from zen.degree import *
 
 # randomization routines
-from randomize import *
+from zen.randomize import *
 
 # import generation routines
-import generating
+import zen.generating
 
 # import built-in data
-import data
+import zen.data
 
 # import utilities
-from exceptions import *
-from constants import *
+from zen.exceptions import *
+from zen.constants import *
 
 # import io routines
-from io import *
+from zen.io import *
 
 # import algorithms
-from algorithms import *
+from zen.algorithms import *
 
 # import control functionality
-import control
+import zen.control
 
 # import visual stuff
-import layout
-from drawing import *
-from view import *
+import zen.layout
+from zen.drawing import *
+from zen.view import *
 
 # import interoperability
-from nx import *
+from zen.nx import *

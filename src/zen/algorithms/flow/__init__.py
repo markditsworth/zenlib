@@ -12,4 +12,4 @@ Min-cut functions
 
 """
 
-from min_cut import *
+from zen.algorithms.flow.min_cut import *

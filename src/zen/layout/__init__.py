@@ -30,10 +30,10 @@ Layout functions
 
 """
 
-import spring_layout
-import random_layout
-import forceatlas_layout
-import fruchtermanreingold_layout
+import zen.layout.spring_layout
+import zen.layout.random_layout
+import zen.layout.forceatlas_layout
+import zen.layout.fruchtermanreingold_layout
 
 BBOX_NAME = 'bbox'
 BBOX_DEFAULT_VALUE = (0.,0.,100.,100.)

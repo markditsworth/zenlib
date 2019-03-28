@@ -24,9 +24,9 @@ from zen.exceptions import *
 from zen.graph import Graph
 from zen.digraph import DiGraph
 from zen.bipartite import BipartiteGraph
-from gml_codec import BasicGMLCodec, ZenGMLCodec
-from gml_interpreter import GMLInterpreter
-from gml_tokenizer import GMLTokenizer
+from zen.io.gml_codec import BasicGMLCodec, ZenGMLCodec
+from zen.io.gml_interpreter import GMLInterpreter
+from zen.io.gml_tokenizer import GMLTokenizer
 from collections import Iterable, Hashable
 import os
 import cgi

@@ -18,4 +18,4 @@ try:
 except:
 	print('zen.drawing.mpl not auto-imported due to missing or broken matplotlib library')
 	
-from ubigraph import UbigraphRenderer
+from zen.drawing.ubigraph import UbigraphRenderer

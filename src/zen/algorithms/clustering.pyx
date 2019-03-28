@@ -23,7 +23,7 @@ from zen.digraph cimport DiGraph
 from zen.graph cimport Graph
 import numpy as np
 cimport numpy as np
-from exceptions import *
+from zen.exceptions import *
 
 from cpython cimport bool
 

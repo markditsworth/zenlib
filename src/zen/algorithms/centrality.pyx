@@ -54,7 +54,7 @@ cimport numpy as np
 import numpy as np
 from zen.digraph cimport *
 from zen.graph cimport *
-from exceptions import *
+from zen.exceptions import *
 
 cpdef brandes_betweenness(G,bint normalized=True,bint weighted=False):
 	"""

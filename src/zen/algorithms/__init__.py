@@ -1,11 +1,11 @@
-from flow import *
-from centrality import *
-import clustering
-from components import *
-from matching import *
-from modularity import *
-from properties import *
-from shortest_path import *
-from spanning import *
+from zen.algorithms.flow import *
+from zen.algorithms.centrality import *
+import zen.algorithms.clustering
+from zen.algorithms.components import *
+from zen.algorithms.matching import *
+from zen.algorithms.modularity import *
+from zen.algorithms.properties import *
+from zen.algorithms.shortest_path import *
+from zen.algorithms.spanning import *
 
 

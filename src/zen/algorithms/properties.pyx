@@ -2,7 +2,7 @@
 This module provides functions that measure of distances within a network.
 """
 
-from shortest_path cimport *
+from zen.algorithms.shortest_path cimport *
 import numpy as np
 cimport numpy as np
 import numpy.ma as ma

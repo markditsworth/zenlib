@@ -2,7 +2,8 @@ from zen.exceptions import ZenException
 from numbers import Number
 from collections import Hashable, Iterable
 import re
-import htmlentitydefs
+#import htmlentitydefs
+import html.entities as htmlentitydefs
 
 class Encoder:
 	__name__ = 'zen_base_encoder'
