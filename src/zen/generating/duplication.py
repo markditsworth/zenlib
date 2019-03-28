@@ -1,5 +1,6 @@
 import random
-from sys import maxint
+#from sys import maxint
+from sys import maxsize
 
 from zen.graph import Graph
 from zen.digraph import DiGraph
