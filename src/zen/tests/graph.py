@@ -1,6 +1,6 @@
 import unittest
 import random
-import types
+#import types
 import pickle
 
 from zen import *
@@ -564,8 +564,10 @@ class GraphTestCase(unittest.TestCase):
         G.add_edge('hello','there')
         G.add_edge('hello','world')
         
-        self.assertEqual(type(G.nodes()),types.ListType)
-        self.assertEqual(type(G.neighbors('hello')),types.ListType)
+        #self.assertEqual(type(G.nodes()),types.ListType)
+        self.assertTrue(isinstance(G.nodes(),list))
+        #self.assertEqual(type(G.neighbors('hello')),types.ListType)
+        self.assertTrue(isinstance(G.neighbors('hello'),list))
         self.assertEqual(len(G.neighbors('hello')),2)
         
         G.validate()
@@ -634,7 +636,7 @@ class GraphTestCase(unittest.TestCase):
         for i in range(10):
             G.add_node()
         
-        order = range(10)       
+        order = list(range(10))
         order.remove(5)
         random.shuffle(order)
         

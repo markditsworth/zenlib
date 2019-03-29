@@ -5,6 +5,7 @@ import networkx
 
 import pylab
 from zen import *
+import matplotlib as mpl
 
 class DrawingTestCase(unittest.TestCase):
 	

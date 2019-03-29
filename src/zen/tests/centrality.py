@@ -104,7 +104,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 		Gnx = networkx.DiGraph()
 		G = DiGraph()
 		
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -114,7 +114,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 			G.set_weight_(eidx,w)
 			Gnx.add_edge(n1,n2,weight=w)
 			
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -143,7 +143,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 		Gnx = networkx.DiGraph()
 		G = DiGraph()
 
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -153,7 +153,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 			G.set_weight_(eidx,w)
 			Gnx.add_edge(n1,n2,weight=w)
 
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -182,7 +182,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 		Gnx = networkx.Graph()
 		G = Graph()
 		
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -192,7 +192,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 			G.set_weight_(eidx,w)
 			Gnx.add_edge(n1,n2,weight=w)
 			
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -221,7 +221,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 		Gnx = networkx.Graph()
 		G = Graph()
 
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
@@ -231,7 +231,7 @@ class TestBetweennessCentrality(unittest.TestCase):
 			G.set_weight_(eidx,w)
 			Gnx.add_edge(n1,n2,weight=w)
 
-		nodes = range(500)
+		nodes = list(range(500))
 		random.shuffle(nodes)
 		while len(nodes) > 0:
 			n1 = nodes.pop()
