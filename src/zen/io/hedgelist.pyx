@@ -28,7 +28,7 @@ cpdef write(HyperGraph G, filename):
 		
 	fh.close()
 	
-cpdef read(char* filename,max_line_len=5000):
+cpdef read(char* filename,max_line_len=5000):       #char* -> str
 	"""
 	Read in a network from a file in an edge list format. Hyperedgelist formats are only
 	for undirected graphs.
@@ -39,7 +39,7 @@ cpdef read(char* filename,max_line_len=5000):
 	cdef int MAX_LINE_LEN = max_line_len
 
 	# make the string buffer
-	str_buffer = '0'*MAX_LINE_LEN
+	str_buffer = b'0'*MAX_LINE_LEN
 
 	cdef char* buffer = str_buffer
 

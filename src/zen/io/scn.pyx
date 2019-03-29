@@ -284,9 +284,9 @@ def read(filename,**kwargs):
 		raise ZenException, 'Unknown keyword arguments: %s' % ', '.join(kwargs.keys())
 	
 	if directed is True or (directed is None and type(merge_graph) == DiGraph):
-		return parse_directed_scn(filename,max_line_len,node_obj_fxn,ignore_duplicate_edges,merge_graph)
+		return parse_directed_scn(bytes(filename,'utf-8'),max_line_len,node_obj_fxn,ignore_duplicate_edges,merge_graph)
 	else:
-		return parse_undirected_scn(filename,max_line_len,node_obj_fxn,ignore_duplicate_edges,merge_graph)
+		return parse_undirected_scn(bytes(filename,'utf-8'),max_line_len,node_obj_fxn,ignore_duplicate_edges,merge_graph)
 			
 cdef parse_directed_scn(char* filename,int max_line_len,node_obj_fxn,bool ignore_duplicate_edges,merge_graph):
 	
@@ -450,8 +450,8 @@ cdef parse_undirected_scn(char* filename,int max_line_len,node_obj_fxn,bool igno
 		raise ZenException, 'Unable to open file %s' % filename
 
 	# make the string buffer
-	last_str_buffer = '0'*max_line_len
-	str_buffer = '0'*max_line_len
+	last_str_buffer = b'0'*max_line_len
+	str_buffer = b'0'*max_line_len
 
 	cdef char* buffer = str_buffer
 

@@ -103,7 +103,7 @@ def read(char* filename,**kwargs):
 	if len(kwargs) > 0:
 		raise ZenException, 'Unknown keyword arguments: %s' % ', '.join(kwargs.keys())
 	
-	return __inner_read(filename,directed,ignore_duplicate_edges,weighted,node_obj_fxn)
+	return __inner_read(bytes(filename,'utf-8'),directed,ignore_duplicate_edges,weighted,node_obj_fxn)
 	
 cpdef __inner_read(char* filename,bint directed,bint ignore_duplicates,bint weighted,node_obj_fxn):
 	
@@ -119,7 +119,7 @@ cpdef __inner_read(char* filename,bint directed,bint ignore_duplicates,bint weig
 	cdef int MAX_LINE_LEN = 100
 	
 	# make the string buffer
-	str_buffer = '0'*MAX_LINE_LEN
+	str_buffer = b'0'*MAX_LINE_LEN
 	
 	cdef char* buffer = str_buffer
 	cdef char* result

@@ -68,13 +68,13 @@ def read(filename,**kwargs):
 	if len(kwargs) > 0:
 		raise ZenException, 'Unknown keyword arguments: %s' % ', '.join(kwargs.keys())
 	
-	return __inner_read(filename,node_obj_fxn,merge_graph)
+	return __inner_read(bytes(filename,'utf-8'),node_obj_fxn,merge_graph)
 	
 cpdef __inner_read(filename,node_obj_fxn,merge_graph):
 	cdef FILE* fh
 	
 	# make the string buffer
-	str_buffer = '0'*MAX_LINE_LEN
+	str_buffer = b'0'*MAX_LINE_LEN
 
 	cdef char* buffer = str_buffer
 
@@ -123,7 +123,7 @@ cdef parse_directed_rdot(FILE* fh,node_obj_fxn,merge_graph):
 		raise ZenException, 'merge_graph must be a DiGraph to incorporate directed rdot information'	
 
 	# make the string buffer
-	str_buffer = '0'*MAX_LINE_LEN
+	str_buffer = b'0'*MAX_LINE_LEN
 
 	cdef char* buffer = str_buffer
 
