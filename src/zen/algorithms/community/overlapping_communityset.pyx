@@ -1,7 +1,7 @@
 from zen.graph cimport Graph
 from zen.digraph cimport DiGraph
 
-from communityset cimport Community
+from zen.algorithms.community.communityset cimport Community
 from zen import ZenException
 
 cimport numpy as np

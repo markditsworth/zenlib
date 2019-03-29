@@ -60,7 +60,7 @@ Colors
 The valid range of color values/objects is determined by the specific drawing function that will be used.
 
 """
-from exceptions import *
+from zen.exceptions import *
 
 __all__ = ['View','CIRCLE']
 

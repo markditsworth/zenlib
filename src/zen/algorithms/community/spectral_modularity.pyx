@@ -1,7 +1,7 @@
 from zen.graph cimport Graph
 from zen.graph import ZenException
-cimport communityset as cs
-import community_common as common
+cimport zen.algorithms.community.communityset as cs
+import zen.algorithms.community.community_common as common
 
 cimport numpy as np
 import numpy as np

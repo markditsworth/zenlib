@@ -7,8 +7,8 @@ The ``zen.nx`` module provides functions for converting graph objects to and fro
 
 """
 
-from graph import Graph
-from digraph import DiGraph
+from zen.graph import Graph
+from zen.digraph import DiGraph
 import networkx
 
 __all__ = ['to_networkx','from_networkx']	

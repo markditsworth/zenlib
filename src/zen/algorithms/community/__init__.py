@@ -42,10 +42,10 @@ specifically designed to contain communities (every community being contained in
 
 """
 
-from communityset import *
-from overlapping_communityset import *
-from lpa import lpa
-from slpa import slpa
-from label_rank import label_rank
-from spectral_modularity import spectral_modularity
-from louvain import louvain
+from zen.algorithms.community.communityset import *
+from zen.algorithms.community.overlapping_communityset import *
+from zen.algorithms.community.lpa import lpa
+from zen.algorithms.community.slpa import slpa
+from zen.algorithms.community.label_rank import label_rank
+from zen.algorithms.community.spectral_modularity import spectral_modularity
+from zen.algorithms.community.louvain import louvain

@@ -2,8 +2,8 @@ from zen.graph cimport Graph
 from zen.digraph cimport DiGraph
 from zen import ZenException
 
-cimport communityset as cs
-import community_common as common
+cimport zen.algorithms.community.communityset as cs
+import zen.algorithms.community.community_common as common
 
 import numpy as np
 cimport numpy as np
