@@ -279,7 +279,7 @@ def get_path(G, s, t):
 		path = None
 	else:
 		path = []
-		for i in xrange(len(shortest_path)-1):
+		for i in range(len(shortest_path)-1):
 			#converts the shortest path from a list of nodes to a list of (u,v) edges
 			path = path + [(shortest_path[i], shortest_path[i+1])]
 	return path
