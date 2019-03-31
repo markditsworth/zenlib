@@ -84,7 +84,7 @@ class DiGraphCopyTestCase(unittest.TestCase):
                 #import sys
 
                 k=2
-                for N in xrange(190,200):
+                for N in range(190,200):
                         #print  'N = ', N
                         for Gf,lbl in [ ( lambda: erdos_renyi(N, float(k)/N, directed=True), 'ER'),
                                 ( lambda: barabasi_albert(N,k,directed=True), 'BA'),
@@ -94,7 +94,7 @@ class DiGraphCopyTestCase(unittest.TestCase):
 
                                 #print lbl
                                 #sys.stdout.flush()
-                                for i in xrange(10):
+                                for i in range(10):
                                         G = Gf()
                                         while len(G) > 0:
                                                 G.rm_node_(G.nodes_()[np.random.randint(len(G))])
