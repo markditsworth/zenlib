@@ -593,7 +593,7 @@ cdef process_properties(char* buffer, int buf_len, int i, int line_no, int num_p
                         eprop += 1
                         
                 prop = buffer[sprop:eprop]
-                props[p] = prop
+                props[p] = prop.decode('utf-8')
                 
                 # move past the space
                 i += 1
